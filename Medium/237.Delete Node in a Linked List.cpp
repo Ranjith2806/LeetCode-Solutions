@@ -16,6 +16,8 @@ For the input, you should provide the entire linked list head and the node to be
 We will build the linked list and pass the node to your function.
 The output will be the entire list after calling your function.*/
 
+
+//APPROACH-1 BY SWAPPING NODES.
 class Solution {
 public:
     void deleteNode(ListNode* node) {
@@ -25,5 +27,16 @@ public:
         swap(node->val,node->next->val);
         ListNode*temp2=node->next;
         node->next=node->next->next;
+    }
+};
+
+
+// APPROACH-2 
+class Solution {
+public:
+    void deleteNode(ListNode* node) {
+        ListNode*curr=node->next;
+        node->val=curr->val;
+        node->next=curr->next;
     }
 };
